@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Request
 
 struct ContentView: View {
     
@@ -18,7 +19,28 @@ struct ContentView: View {
         }
     }*/
     var body: some View {
-        PostView(post: postViewModel.listing[0].data)
+        NavigationView {
+            RequestView(Listing.self, Request {
+                Url("https://www.reddit.com/r/nextfuckinglevel/fqlide.json")
+                Header.Accept(.json)
+            }) { listings in
+                if listings != nil {
+                    ForEach(listings!.dropLast().map({ $0.data.children }).map ({ $0.data }), id: \.id) { post in
+                            PostView(post: post)
+                    }
+                }
+            }
+        .navigationBarTitle(Text(""), displayMode: .inline)
+        .navigationBarItems(trailing: HStack {
+            Button(action: {
+                self.showLoginWebView()
+            }) {
+                HStack {
+                    Text("Login")
+                }
+            }
+        })
+        }
     }
 }
 
