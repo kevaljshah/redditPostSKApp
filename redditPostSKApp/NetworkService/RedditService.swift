@@ -15,15 +15,15 @@ struct RedditService {
         }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, error == nil else {
+            if let data = data, error == nil {
+                let posts = try? JSONDecoder().decode([Listing].self, from: data)
+                DispatchQueue.main.async {
+                    completion(posts)
+                }
+            } else {
                  DispatchQueue.main.async {
                      completion(nil)
                  }
-            }
-            
-            let posts = try? JSONDecoder().decode([Listing].self, from: data)
-            DispatchQueue.main.async {
-                completion(posts)
             }
         }.resume()
     }

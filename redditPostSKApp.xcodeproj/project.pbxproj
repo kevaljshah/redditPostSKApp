@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,12 @@
 		8CD64A7A24302134001846C6 /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD64A7924302134001846C6 /* Listing.swift */; };
 		8CD64A7C24302159001846C6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD64A7B24302159001846C6 /* Post.swift */; };
 		8CD64A7E2430223E001846C6 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD64A7D2430223E001846C6 /* Comment.swift */; };
+		8CD64A8124302307001846C6 /* ListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD64A8024302307001846C6 /* ListingViewModel.swift */; };
+		8CD64A84243024D0001846C6 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD64A83243024D0001846C6 /* PostView.swift */; };
+		8CD64A8724302558001846C6 /* Json in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD64A8624302558001846C6 /* Json */; };
+		8CD64A8924302558001846C6 /* Request in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD64A8824302558001846C6 /* Request */; };
+		8CD64A8B243025D5001846C6 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD64A8A243025D5001846C6 /* DetailsView.swift */; };
+		8CD64A8D24302699001846C6 /* FlairListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD64A8C24302699001846C6 /* FlairListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +52,10 @@
 		8CD64A7924302134001846C6 /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
 		8CD64A7B24302159001846C6 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		8CD64A7D2430223E001846C6 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		8CD64A8024302307001846C6 /* ListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingViewModel.swift; sourceTree = "<group>"; };
+		8CD64A83243024D0001846C6 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		8CD64A8A243025D5001846C6 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		8CD64A8C24302699001846C6 /* FlairListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlairListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +63,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CD64A8924302558001846C6 /* Request in Frameworks */,
+				8CD64A8724302558001846C6 /* Json in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +99,8 @@
 		8CD64A52243020BA001846C6 /* redditPostSKApp */ = {
 			isa = PBXGroup;
 			children = (
+				8CD64A82243024C2001846C6 /* View */,
+				8CD64A7F243022F6001846C6 /* ViewModels */,
 				8CD64A7824302126001846C6 /* Models */,
 				8CD64A75243020F8001846C6 /* NetworkService */,
 				8CD64A53243020BA001846C6 /* AppDelegate.swift */,
@@ -135,6 +149,24 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		8CD64A7F243022F6001846C6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8CD64A8024302307001846C6 /* ListingViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8CD64A82243024C2001846C6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8CD64A83243024D0001846C6 /* PostView.swift */,
+				8CD64A8A243025D5001846C6 /* DetailsView.swift */,
+				8CD64A8C24302699001846C6 /* FlairListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -151,6 +183,10 @@
 			dependencies = (
 			);
 			name = redditPostSKApp;
+			packageProductDependencies = (
+				8CD64A8624302558001846C6 /* Json */,
+				8CD64A8824302558001846C6 /* Request */,
+			);
 			productName = redditPostSKApp;
 			productReference = 8CD64A50243020BA001846C6 /* redditPostSKApp.app */;
 			productType = "com.apple.product-type.application";
@@ -201,6 +237,9 @@
 				Base,
 			);
 			mainGroup = 8CD64A47243020BA001846C6;
+			packageReferences = (
+				8CD64A8524302558001846C6 /* XCRemoteSwiftPackageReference "swift-request" */,
+			);
 			productRefGroup = 8CD64A51243020BA001846C6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -237,12 +276,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CD64A54243020BA001846C6 /* AppDelegate.swift in Sources */,
+				8CD64A8B243025D5001846C6 /* DetailsView.swift in Sources */,
 				8CD64A56243020BA001846C6 /* SceneDelegate.swift in Sources */,
 				8CD64A7A24302134001846C6 /* Listing.swift in Sources */,
 				8CD64A7E2430223E001846C6 /* Comment.swift in Sources */,
 				8CD64A7C24302159001846C6 /* Post.swift in Sources */,
 				8CD64A58243020BA001846C6 /* ContentView.swift in Sources */,
 				8CD64A772430210B001846C6 /* RedditService.swift in Sources */,
+				8CD64A84243024D0001846C6 /* PostView.swift in Sources */,
+				8CD64A8124302307001846C6 /* ListingViewModel.swift in Sources */,
+				8CD64A8D24302699001846C6 /* FlairListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +544,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8CD64A8524302558001846C6 /* XCRemoteSwiftPackageReference "swift-request" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/carson-katri/swift-request";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8CD64A8624302558001846C6 /* Json */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CD64A8524302558001846C6 /* XCRemoteSwiftPackageReference "swift-request" */;
+			productName = Json;
+		};
+		8CD64A8824302558001846C6 /* Request */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CD64A8524302558001846C6 /* XCRemoteSwiftPackageReference "swift-request" */;
+			productName = Request;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8CD64A48243020BA001846C6 /* Project object */;
 }

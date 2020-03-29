@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject private var postViewModel = ListingViewModel()
+    
     var body: some View {
         Text("Hello, World!")
     }
