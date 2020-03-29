@@ -14,20 +14,21 @@ class ListingViewModel: ObservableObject {
     init() {
         RedditService().getPost() { listing in
             if let listing = listing {
-                self.listing = listing.map(ListingDetailsViewModel.init)
+                self.listing = listing.data.children.map(ListingDetailsViewModel.init)
             }
         }
     }
 }
 
 struct ListingDetailsViewModel {
-    var listing: Listing
+    var postData: PostData
     
-    init(listing: Listing) {
-        self.listing = listing
+    init(postData: PostData) {
+        self.postData = postData
     }
     
-    var data: ListingData {
-        return self.listing.data
+    var data: Post {
+        return self.postData.data
     }
 }
+

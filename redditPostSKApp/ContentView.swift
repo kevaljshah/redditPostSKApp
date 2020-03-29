@@ -12,8 +12,13 @@ struct ContentView: View {
     
     @ObservedObject private var postViewModel = ListingViewModel()
     
+    /*init() {
+        RedditService().getPost {
+            print($0)
+        }
+    }*/
     var body: some View {
-        Text("Hello, World!")
+        PostView(post: postViewModel.listing[0].data)
     }
 }
 
