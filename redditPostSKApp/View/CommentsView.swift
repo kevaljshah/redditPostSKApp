@@ -13,7 +13,7 @@ struct CommentsView: View {
     let post: Post
     
     var body: some View {
-        RequestView([CommentsList].self, Request {
+        /*RequestView([CommentsList].self, Request {
             Url("https://www.reddit.com/r/nextfuckinglevel/fqlide.json")
             Header.Accept(.json)
         }) { listings in
@@ -27,10 +27,10 @@ struct CommentsView: View {
                 }
             } else {
                 Text("No Comments")
-            }
+            }*/
+            Text("No Comment")
         }
     }
-}
 
 struct CommentDetailView: View {
     let comment: Comment

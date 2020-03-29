@@ -31,7 +31,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        if (url.scheme == "myappscheme") {
+            let queryParams = url.query?.components(separatedBy: "&")
+            let codeParam = (queryParams as NSArray?)?.filtered(using: NSPredicate(format: "SELF BEGINSWITH %@", "code="))
+            let codeQuery = codeParam?[0] as? String
+            let code = codeQuery?.replacingOccurrences(of: "code=", with: "")
+            print("User code is: \(code)")
+            return true
+        }
 
-
+        return false
+    }
 }
 

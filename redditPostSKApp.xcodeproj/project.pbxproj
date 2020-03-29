@@ -25,6 +25,7 @@
 		8CD64A8B243025D5001846C6 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD64A8A243025D5001846C6 /* DetailsView.swift */; };
 		8CD64A8D24302699001846C6 /* FlairListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD64A8C24302699001846C6 /* FlairListView.swift */; };
 		8CD64A8F243035CD001846C6 /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD64A8E243035CD001846C6 /* CommentsView.swift */; };
+		8CD64A9124305FB2001846C6 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD64A9024305FB2001846C6 /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		8CD64A8A243025D5001846C6 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		8CD64A8C24302699001846C6 /* FlairListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlairListView.swift; sourceTree = "<group>"; };
 		8CD64A8E243035CD001846C6 /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
+		8CD64A9024305FB2001846C6 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				8CD64A8A243025D5001846C6 /* DetailsView.swift */,
 				8CD64A8C24302699001846C6 /* FlairListView.swift */,
 				8CD64A8E243035CD001846C6 /* CommentsView.swift */,
+				8CD64A9024305FB2001846C6 /* WebView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				8CD64A54243020BA001846C6 /* AppDelegate.swift in Sources */,
 				8CD64A8B243025D5001846C6 /* DetailsView.swift in Sources */,
 				8CD64A8F243035CD001846C6 /* CommentsView.swift in Sources */,
+				8CD64A9124305FB2001846C6 /* WebView.swift in Sources */,
 				8CD64A56243020BA001846C6 /* SceneDelegate.swift in Sources */,
 				8CD64A7A24302134001846C6 /* Listing.swift in Sources */,
 				8CD64A7E2430223E001846C6 /* Comment.swift in Sources */,

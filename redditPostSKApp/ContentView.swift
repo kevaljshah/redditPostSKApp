@@ -20,7 +20,8 @@ struct ContentView: View {
     }*/
     var body: some View {
         NavigationView {
-            RequestView(Listing.self, Request {
+            Text("Hello World")
+            /*RequestView(Listing.self, Request {
                 Url("https://www.reddit.com/r/nextfuckinglevel/fqlide.json")
                 Header.Accept(.json)
             }) { listings in
@@ -29,17 +30,13 @@ struct ContentView: View {
                             PostView(post: post)
                     }
                 }
-            }
-        .navigationBarTitle(Text(""), displayMode: .inline)
-        .navigationBarItems(trailing: HStack {
-            Button(action: {
-                self.showLoginWebView()
-            }) {
-                HStack {
+            }*/
+            .navigationBarTitle(Text(""), displayMode: .inline)
+            .navigationBarItems(trailing: HStack {
+                    NavigationLink(destination: WebView()) {
                     Text("Login")
                 }
-            }
-        })
+            })
         }
     }
 }
